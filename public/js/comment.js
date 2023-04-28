@@ -1,10 +1,10 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
-
+console.log("clicked")
   const text = document.querySelector('#comment-desc').value.trim();
 
   if (text) {
-    const response = await fetch(`/api/projects`, {
+    const response = await fetch(`/api/comments`, {
       method: 'POST',
       body: JSON.stringify({ text }),
       headers: {
@@ -13,7 +13,7 @@ const newFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/project');
+     // document.location.replace('/project');
     } else {
       alert('Failed to create comment');
     }
@@ -29,7 +29,8 @@ const delButtonHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/project');
+      //document.location.replace('/project');
+      console.log("Yep")
     } else {
       alert('Failed to delete comment');
     }
@@ -38,7 +39,7 @@ const delButtonHandler = async (event) => {
 
 document
   .querySelector('.new-comment-form')
-  .addEventListener('submit', newFormHandler);
+  .addEventListener('click', newFormHandler);
 
 document
   .querySelector('.comment-list')
