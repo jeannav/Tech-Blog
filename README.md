@@ -23,13 +23,19 @@ To use this Collection Keeper, register for an account on the website and sign i
 
 ## Application Screenshot
 
+![Homepage](./public/images/Homepage.png)
+
+![Login Page](./public/images/Login%20Page.png)
+
+![Dashboard](./public/images/Dashboard.png)
+
+![Post Page](./public/images/Post%20Page.png)
+
 ## Deployed Link
 
 [GitHub repo](https://github.com/jeannav/Tech-Blog)
 
-[Live URL](https://jeannav.github.io/Tech-Blog/)
-
-[Heroku git URL](https://git.heroku.com/mvc-tech-blog.git)
+[Heroku git URL](https://techtalksblog.herokuapp.com/)
 
 ### Author
 
