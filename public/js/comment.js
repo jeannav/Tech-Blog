@@ -1,10 +1,9 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
-console.log("clicked")
   const text = document.querySelector('#comment-desc').value.trim();
 
   if (text) {
-    const response = await fetch(`/api/comments`, {
+    const response = await fetch('/api/comments', {
       method: 'POST',
       body: JSON.stringify({ text }),
       headers: {
@@ -13,34 +12,34 @@ console.log("clicked")
     });
 
     if (response.ok) {
-     // document.location.replace('/project');
+     document.location.replace('/project');
     } else {
       alert('Failed to create comment');
     }
   }
 };
 
-const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
+// const delButtonHandler = async (event) => {
+//   if (event.target.hasAttribute('data-id')) {
+//     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/comments/${id}`, {
-      method: 'DELETE',
-    });
+//     const response = await fetch(`/api/comments/${id}`, {
+//       method: 'DELETE',
+//     });
 
-    if (response.ok) {
-      //document.location.replace('/project');
-      console.log("Yep")
-    } else {
-      alert('Failed to delete comment');
-    }
-  }
-};
+//     if (response.ok) {
+//       //document.location.replace('/project');
+//       console.log("Yep")
+//     } else {
+//       alert('Failed to delete comment');
+//     }
+//   }
+// };
 
 document
   .querySelector('.new-comment-form')
-  .addEventListener('click', newFormHandler);
+  .addEventListener('submit', newFormHandler);
 
-document
-  .querySelector('.comment-list')
-  .addEventListener('click', delButtonHandler);
+// document
+//   .querySelector('.comment-list')
+//   .addEventListener('click', delButtonHandler);
